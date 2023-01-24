@@ -1,9 +1,9 @@
 const {google} = require('googleapis');
-
+require('dotenv').config()
 const oAuth2Client = new google.auth.OAuth2(
-    883440079960-c9624aksv1kluqotgf0ubbghrhav2nnn.apps.googleusercontent.com,
-    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,
-    'http://localhost:8000/callback'
+    process.env.CLIENT_ID,
+    process.env.CLIENT_SECRET,
+    process.env.REDIRECT_URL
 );
 
 oAuth2Client.setCredentials({
